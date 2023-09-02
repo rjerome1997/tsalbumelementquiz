@@ -2,7 +2,7 @@
 <html>
 <body>
   <h1>Taylor Swift Album + Element Quiz</h1>
-  <form action = "/action_page.php">
+  <form id="form">
     <p>Question 1</p>
     <input type="radio" id="option1" name = "question1" value = "option1">
     <label for="option1">Option 1</label><br>
@@ -12,5 +12,17 @@
 
     <input type="submit" value="Submit">
   </form>
+
+  <p id="demo"></p>
+  
+  <script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', e=> {
+      e.preventDefault();
+      var x = document.querySelector('input[name="question1"]:checked').value;
+      document.getElementbyId("demo").innerHTML = x;  
+      
+    })
+  </script>
 </body>
 </html>
